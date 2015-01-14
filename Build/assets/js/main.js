@@ -82,7 +82,7 @@
 
   desktopPlayer = '<iframe id="headervid" src="//player.vimeo.com/video/113872517?api=1&amp;player_id=headervid&amp;title=0&amp;byline=0&amp;portrait=0" width="1102" height="620" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 
-  iPhonePlayer = '<video id="headervid" src="http://assets.robocatapps.com/bemyeyes/bemyeyes-mobile.mov" controls="controls" webkitAllowFullScreen mozallowfullscreen allowFullScreen autoplay preload></video>';
+  iPhonePlayer = '<iframe id="headervid" src="//player.vimeo.com/video/113872517?api=1&amp;player_id=headervid&amp;title=0&amp;byline=0&amp;portrait=0" width="320" height="197" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 
   preparePlayer = function() {
     var player;
@@ -110,25 +110,15 @@
   };
 
   startVideo = function() {
-    var ele;
     showPlayer();
-    if (!isiOS) {
-      return Froogaloop($("#headervid")[0]).addEvent('ready', vimeoReady);
-    } else {
-      ele = document.getElementById("headervid");
-      ele.addEventListener('pause', vimeoPaused);
-      ele.addEventListener('ended', vimeoPaused);
-      return ele.play();
-    }
+    return Froogaloop($("#headervid")[0]).addEvent('ready', vimeoReady);
   };
 
   vimeoReady = function(pid) {
     var fp;
-    if (!isiOS) {
-      fp = Froogaloop(pid);
-      fp.addEvent('finish', vimeoFinished);
-      return fp.api('play');
-    }
+    fp = Froogaloop(pid);
+    fp.addEvent('finish', vimeoFinished);
+    return fp.api('play');
   };
 
   vimeoFinished = function(pid) {

@@ -1287,9 +1287,15 @@ p {
       line-height: 44pt; }
     .header .header-text h2 {
       font-size: 20pt; }
-  .header .stats {
+  .header div.stats {
     position: relative;
-    margin: 60px auto 20px auto; } }
+    margin: 220px auto 20px auto; }
+
+  .details {
+    margin-top: 0; }
+
+  .features, .testemonials {
+    margin-top: 30px; } }
 @media screen and (max-width: 320px) {
   .header .header-text h2 {
     font-size: 18pt; } }
