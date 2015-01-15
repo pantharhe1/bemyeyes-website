@@ -711,22 +711,23 @@ p {
   margin: 10px 0;
   display: inline-block; }
 .content .team {
-  *zoom: 1;
-  display: block; }
-  .content .team:before, .content .team:after {
-    content: " ";
-    display: table; }
-  .content .team:after {
-    clear: both; }
-  .content .team .asection, .content .team .bsection {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .content .team:last-child {
+    margin-right: 0; }
+  .content .team .section {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 48.82117%; }
-    .content .team .asection:last-child, .content .team .bsection:last-child {
+    .content .team .section:last-child {
       margin-right: 0; }
   .content .team .bsection {
     margin-right: 0; }
+  .content .team .csection {
+    clear: both; }
 
 .details {
   margin-top: 60px; }

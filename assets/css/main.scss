@@ -307,13 +307,18 @@ $menu-height: 70px;
 	}
 
 	.team {
-		@include row;
+		@include span-columns(12 of 12);
 
-		.asection, .bsection {
+		.section {
 			@include span-columns(6 of 12);
 		}
+
 		.bsection {
 			@include omega;
+		}
+
+		.csection {
+			clear: both;
 		}
 	}
 }
