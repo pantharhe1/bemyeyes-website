@@ -1,5 +1,5 @@
 (function() {
-  var animateFeatures, applyStats, countTotStat, delay, desktopPlayer, getStats, hidePlayer, iPhonePlayer, isSafari, isiOS, isiPad, isiPhone, preparePlayer, showPlayer, startVideo, userAgent, vimeoFinished, vimeoReady, _ref, _ref1, _ref2;
+  var animateFeatures, applyStats, countTotStat, delay, desktopPlayer, getStats, hidePlayer, iPhonePlayer, isSafari, isiOS, isiPad, isiPhone, preparePlayer, showPlayer, startVideo, userAgent, vimeoFinished, vimeoPaused, vimeoReady, _ref, _ref1, _ref2;
 
   getStats = function() {
     var url, xhr;
@@ -82,7 +82,7 @@
 
   desktopPlayer = '<iframe id="headervid" src="//player.vimeo.com/video/113872517?api=1&amp;player_id=headervid&amp;title=0&amp;byline=0&amp;portrait=0" width="1102" height="620" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 
-  iPhonePlayer = '<iframe id="headervid" src="//player.vimeo.com/video/113872517?api=1&amp;player_id=headervid&amp;title=0&amp;byline=0&amp;portrait=0" width="320" height="197" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+  iPhonePlayer = '<video id="headervid" src="http://static.robocatapps.com/bemyeyes/bemyeyes-mobile.mov" controls="controls" webkitAllowFullScreen mozallowfullscreen allowFullScreen autoplay preload></video>';
 
   preparePlayer = function() {
     var player;
@@ -110,15 +110,34 @@
   };
 
   startVideo = function() {
+    var ele;
     showPlayer();
-    return Froogaloop($("#headervid")[0]).addEvent('ready', vimeoReady);
+    if (!isiOS) {
+      return Froogaloop($("#headervid")[0]).addEvent('ready', vimeoReady);
+    } else {
+      ele = document.getElementById("headervid");
+      ele.addEventListener('pause', vimeoPaused);
+      ele.addEventListener('ended', vimeoPaused);
+      return ele.play();
+    }
   };
 
   vimeoReady = function(pid) {
     var fp;
-    fp = Froogaloop(pid);
-    fp.addEvent('finish', vimeoFinished);
-    return fp.api('play');
+    if (!isiOS) {
+      fp = Froogaloop(pid);
+      fp.addEvent('pause', vimeoPaused);
+      fp.addEvent('finish', vimeoFinished);
+      return fp.api('play');
+    }
+  };
+
+  vimeoPaused = function(pid) {
+    if (isiOS) {
+      return delay(100, function() {
+        return hidePlayer();
+      });
+    }
   };
 
   vimeoFinished = function(pid) {
