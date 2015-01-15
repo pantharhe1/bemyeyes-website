@@ -5,18 +5,17 @@
     var url, xhr;
     url = "http://api.bemyeyes.org/stats/community?callback=?";
     xhr = $.getJSON(url, function() {
-      return console.log("Got api response");
+      return console.log("API Stat response");
     });
     xhr.done(function(json) {
       console.log(json);
-      console.log(json.no_helped);
       applyStats(json.blind, json.helpers, json.no_helped);
-      return delay(10000, function() {
+      return delay(30000, function() {
         return getStats();
       });
     });
     return xhr.fail(function() {
-      return console.log("failed to get api stats");
+      return console.log("Failed to get api stats");
     });
   };
 

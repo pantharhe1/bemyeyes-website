@@ -1,17 +1,16 @@
 getStats = () ->
 	url = "http://api.bemyeyes.org/stats/community?callback=?"
 	xhr = $.getJSON url, () ->
-		console.log "Got api response"
+		console.log "API Stat response"
 
 	xhr.done (json) ->
 		console.log json
-		console.log json.no_helped
 		applyStats json.blind, json.helpers, json.no_helped
-		delay 10000, ->
+		delay 30000, ->
 			getStats()
 
 	xhr.fail () ->
-		console.log "failed to get api stats"
+		console.log "Failed to get api stats"
 
 applyStats = (blind, helpers, helped) ->
 	offset = 400
