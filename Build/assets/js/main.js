@@ -10,7 +10,10 @@
     xhr.done(function(json) {
       console.log(json);
       console.log(json.no_helped);
-      return applyStats(json.blind, json.helpers, json.no_helped);
+      applyStats(json.blind, json.helpers, json.no_helped);
+      return delay(10000, function() {
+        return getStats();
+      });
     });
     return xhr.fail(function() {
       return console.log("failed to get api stats");
@@ -30,8 +33,9 @@
   };
 
   countTotStat = function(elem, stat) {
-    var anim;
-    anim = new countUp(elem, 0, stat, 0, 2.0);
+    var anim, start;
+    start = parseInt($("#" + elem).html().replace(",", ""));
+    anim = new countUp(elem, start, stat, 0, 2.0);
     return anim.start();
   };
 

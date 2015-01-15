@@ -7,6 +7,8 @@ getStats = () ->
 		console.log json
 		console.log json.no_helped
 		applyStats json.blind, json.helpers, json.no_helped
+		delay 10000, ->
+			getStats()
 
 	xhr.fail () ->
 		console.log "failed to get api stats"
@@ -20,7 +22,8 @@ applyStats = (blind, helpers, helped) ->
 			countTotStat "stats_helped", helped
 
 countTotStat = (elem, stat) ->
-	anim = new countUp(elem, 0, stat, 0, 2.0)
+	start = parseInt($("#" + elem).html().replace(",", ""))
+	anim = new countUp(elem, start, stat, 0, 2.0)
 	anim.start()
 
 delay = (ms, func) ->
