@@ -9,10 +9,7 @@
     });
     xhr.done(function(json) {
       console.log(json);
-      applyStats(json.blind, json.helpers, json.no_helped);
-      return delay(30000, function() {
-        return getStats();
-      });
+      return applyStats(json.blind, json.helpers, json.no_helped);
     });
     return xhr.fail(function() {
       return console.log("Failed to get api stats");

@@ -6,8 +6,8 @@ getStats = () ->
 	xhr.done (json) ->
 		console.log json
 		applyStats json.blind, json.helpers, json.no_helped
-		delay 30000, ->
-			getStats()
+		# delay 30000, ->
+		# 	getStats()
 
 	xhr.fail () ->
 		console.log "Failed to get api stats"
