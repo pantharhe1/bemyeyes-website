@@ -903,6 +903,14 @@ $menu-height: 70px;
 			.stat {
 				@include span-columns(4 of 12);
 
+				.value {
+					font-size: 24pt;
+				}
+
+				.label {
+					font-size: 12pt;
+				}
+
 				&:last-child {
 					@include omega;
 				}

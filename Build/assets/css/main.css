@@ -1217,6 +1217,10 @@ p {
         width: 31.76157%; }
         .header div.stats .stat:last-child {
           margin-right: 0; }
+        .header div.stats .stat .value {
+          font-size: 24pt; }
+        .header div.stats .stat .label {
+          font-size: 12pt; }
         .header div.stats .stat:last-child {
           margin-right: 0; }
 
