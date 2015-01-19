@@ -51,8 +51,7 @@ isiPad = userAgent.match(/iPad/i) != null ? true : false
 isSafari = userAgent.match(/Safari/i) != null ? true : false
 isiOS = isiPhone || isiPad
 
-desktopPlayer = '<iframe id="headervid" src="//player.vimeo.com/video/113872517?api=1&amp;player_id=headervid&amp;title=0&amp;byline=0&amp;portrait=0" width="1102" height="620" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
-# iPhonePlayer = '<iframe id="headervid" src="//player.vimeo.com/video/113872517?api=1&amp;player_id=headervid&amp;title=0&amp;byline=0&amp;portrait=0" width="320" height="197" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+desktopPlayer = '<iframe id="headervid" src="//player.vimeo.com/video/113872517?api=1&amp;player_id=headervid&amp;title=0&amp;byline=0&amp;portrait=0" width="1020" height="573" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
 iPhonePlayer = '<video id="headervid" src="http://static.robocatapps.com/bemyeyes/bemyeyes-mobile.mov" controls="controls" webkitAllowFullScreen mozallowfullscreen allowFullScreen autoplay preload></video>'
 
 preparePlayer = ->
