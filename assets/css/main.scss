@@ -272,6 +272,56 @@ $menu-height: 70px;
 	}
 }
 
+.share-container {
+	background-color: rgb(44, 44, 56);
+}
+
+.share {
+	height: 80px;
+	// line-height: 80px;
+
+	.button {
+		background-repeat: no-repeat;
+		background-position: 14px 50%;
+		color: #fff;
+		display: inline-block;
+		font-size: 14pt;
+		margin-top: 15px;
+		padding: 14px 14px;
+		vertical-align: middle;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.facebook {
+		padding-left: 18 + 2*14px;
+		background-color: rgb(74, 103, 174);
+		@include retina-image("facebook-icon", 18px 31px, png, "facebook-icon@2x");
+	}
+
+	.twitter {
+		padding-left: 29 + 2*14px;
+		background-color: rgb(48, 196, 241);
+		@include retina-image("twitter-icon", 29px 25px, png, "twitter-icon@2x");
+	}
+
+	a, p {
+		float: left;
+		color: #fff;
+		margin-right: 15px;
+	}
+
+	p {
+		margin: 0;
+		height: 80px;
+		line-height: 80px;
+		font-size: 18pt;
+		text-align: center;
+	}
+}
+
 .content {
 	h2 {
 		font-size: 18pt;
