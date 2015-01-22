@@ -700,7 +700,10 @@ p {
     font-size: 14pt;
     margin-top: 15px;
     padding: 14px 14px;
-    vertical-align: middle; }
+    vertical-align: middle;
+    -webkit-transition: background-color 0.2s ease-in-out;
+    -moz-transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out; }
     .share .button:hover {
       text-decoration: none; }
   .share .facebook {
@@ -711,6 +714,8 @@ p {
       .share .facebook {
         background-image: url(../images/facebook-icon@2x.png);
         background-size: 18px 31px; } }
+    .share .facebook:hover {
+      background-color: #3b528b; }
   .share .twitter {
     padding-left: 57px;
     background-color: #30c4f1;
@@ -719,6 +724,8 @@ p {
       .share .twitter {
         background-image: url(../images/twitter-icon@2x.png);
         background-size: 29px 25px; } }
+    .share .twitter:hover {
+      background-color: #269cc0; }
   .share a, .share p {
     float: left;
     color: #fff;
@@ -1135,7 +1142,14 @@ p {
   .features .asection, .features .csection {
     padding-top: 100px; }
   .features .iphone {
-    margin: -30px; } }
+    margin: -30px; }
+
+  .share {
+    padding: 0 10px; }
+    .share p {
+      font-size: 14pt; }
+    .share p, .share a {
+      margin-right: 10px; } }
 @media screen and (max-width: 825px) {
   .details .aside {
     float: left;
@@ -1197,10 +1211,17 @@ p {
       margin-right: 0; }
       .footer .asection:last-child, .footer .bsection:last-child {
         margin-right: 0; } }
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 790px) {
   .menu .bside a {
     font-size: 14pt;
-    margin-left: 20px; } }
+    margin-left: 20px; }
+
+  .share {
+    text-align: center; }
+    .share p {
+      display: none; }
+    .share a {
+      float: none; } }
 @media screen and (max-width: 730px) {
   .footer .bsection {
     height: auto; }
@@ -1337,13 +1358,30 @@ p {
       font-size: 20pt; }
   .header div.stats {
     position: relative;
-    margin: 220px auto 20px auto; }
+    margin: 220px auto 0px auto; }
 
   .details {
     margin-top: 0; }
 
   .features, .testemonials {
-    margin-top: 30px; } }
+    margin-top: 30px; }
+
+  .share .button {
+    margin-top: 11px; } }
+@media screen and (max-width: 480px) {
+  .share {
+    height: 62px;
+    padding: 0 5px; }
+    .share .button {
+      font-size: 12pt;
+      margin-right: 5px;
+      margin-top: 5px;
+      padding: 12px 12px; }
+      .share .button.twitter {
+        margin-right: 0;
+        padding-left: 53px; }
+      .share .button.facebook {
+        padding-left: 42px; } }
 @media screen and (max-width: 320px) {
   .header .header-text h2 {
     font-size: 18pt; } }
