@@ -1370,18 +1370,17 @@ p {
     margin-top: 11px; } }
 @media screen and (max-width: 480px) {
   .share {
-    height: 62px;
-    padding: 0 5px; }
+    height: auto;
+    padding: 0 10px; }
     .share .button {
-      font-size: 12pt;
-      margin-right: 5px;
-      margin-top: 5px;
-      padding: 12px 12px; }
+      font-size: 13pt;
+      margin: 0;
+      width: 80%;
+      padding: 14px 14px;
+      text-align: center; }
       .share .button.twitter {
-        margin-right: 0;
-        padding-left: 53px; }
-      .share .button.facebook {
-        padding-left: 42px; } }
+        margin-top: 5px;
+        margin-bottom: 5px; } }
 @media screen and (max-width: 320px) {
   .header .header-text h2 {
     font-size: 18pt; } }

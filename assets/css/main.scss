@@ -1107,24 +1107,19 @@ $menu-height: 70px;
 
 @include media(max-width 480px) {
 	.share {
-		height: 62px;
-		padding: 0 5px;
+		height: auto;
+		padding: 0 10px;
 
 		.button {
-			font-size: 12pt;
-			margin-right: 5px;
-			margin-top: 5px;
-
-			$padding: 12px;
-			padding: $padding $padding;
+			font-size: 13pt;
+			margin: 0;
+			width: 80%;
+			padding: 14px 14px;
+			text-align: center;
 
 			&.twitter {
-				margin-right: 0;
-				padding-left: 29 + 2*$padding;
-			}
-
-			&.facebook {
-				padding-left: 18 + 2*$padding;
+				margin-top: 5px;
+				margin-bottom: 5px;
 			}
 		}
 	}
