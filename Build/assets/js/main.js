@@ -168,8 +168,14 @@
   $(document).ready(function() {
     getStats();
     preparePlayer();
-    return $(".header").click(function(e) {
+    $(".header").click(function(e) {
       return startVideo();
+    });
+    return $("#fb_share").click(function(e) {
+      return FB.ui({
+        method: "share",
+        href: "http://bemyeyes.org/"
+      });
     });
   });
 

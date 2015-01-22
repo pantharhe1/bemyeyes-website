@@ -120,3 +120,6 @@ $(document).ready ->
 
 	$(".header").click (e) ->
 		startVideo()
+
+	$("#fb_share").click (e) ->
+		FB.ui {method: "share", href: "http://bemyeyes.org/"}
