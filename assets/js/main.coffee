@@ -1,5 +1,5 @@
 getStats = () ->
-	url = "http://api.bemyeyes.org/stats/community?callback=?"
+	url = "http://apiv2.bemyeyes.org/stats/community?callback=?"
 	xhr = $.getJSON url, () ->
 		console.log "API Stat response"
 
